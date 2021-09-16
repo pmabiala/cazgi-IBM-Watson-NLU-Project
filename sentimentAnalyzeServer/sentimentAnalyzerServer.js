@@ -75,7 +75,7 @@ app.get("/url/emotion", (req,res) => {
       })
       .catch(err => {
         return res.send({"error":"Could not do desired operation "+err});
-        return res.send("Could not do desired operation "+err);
+        //Rather return error as JSON object return res.send("Could not do desired operation "+err);
       });
 });
 
@@ -141,7 +141,7 @@ app.get("/text/emotion", (req,res) => {
      })
      .catch(err => {
        return res.send({"error":"Could not do desired operation "+err});
-       return res.send("Could not do desired operation "+err);
+       //Rather return error as JSON object return res.send("Could not do desired operation "+err);
      });
 });
 
@@ -173,7 +173,7 @@ app.get("/text/sentiment", (req,res) => {
      })
      .catch(err => {
        return res.send({"error":"Could not do desired operation "+err});
-       //return res.send("Could not do desired operation "+err);
+       //Rather return error as JSON object return res.send("Could not do desired operation "+err);
      });
 });
 
