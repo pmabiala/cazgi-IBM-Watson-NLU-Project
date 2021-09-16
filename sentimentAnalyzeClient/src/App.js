@@ -70,6 +70,8 @@ class App extends React.Component {
     let mode = this.state.mode
     url = url+"/" + mode + "/emotion?"+ mode + "="+document.getElementById("textinput").value;
 
+    console.log("sendForEmotionAnalysis url =>", url);
+
     fetch(url).then((response)=>{
       response.json().then((data)=>{
       this.setState({sentimentOutput:<EmotionTable emotions={data}/>});

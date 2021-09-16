@@ -67,12 +67,15 @@ app.get("/url/emotion", (req,res) => {
       naturalLanguageUnderstanding.analyze(analyzeParams)
       .then(analysisResults => {
          //Print the JSON returned by NLU instance as a formatted string
+         console.log("analysisResults =>", analysisResults);
+         console.log("analysisResults.result.keywords =>", analysisResults.result.keywords);
          console.log(JSON.stringify(analysisResults.result.keywords[0].emotion,null,2));
          //Please refer to the image to see the order of retrieval
          return res.send(analysisResults.result.keywords[0].emotion,null,2);
       })
       .catch(err => {
-      return res.send("Could not do desired operation "+err);
+        return res.send({"error":"Could not do desired operation "+err});
+        return res.send("Could not do desired operation "+err);
       });
 });
 
